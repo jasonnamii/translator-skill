@@ -1,0 +1,24 @@
+{
+  "skill": "multilingual-translator",
+  "version": "post-doctor-2026-04-26",
+  "cases": [
+    {
+      "id": "trigger-basic",
+      "input": "multilingual-translator 발동",
+      "expect": "스킬 정상 발동 + SKILL.md 흐름 1단계 진입",
+      "fail_if": "발동 누락 또는 NOT 키워드 오발동"
+    },
+    {
+      "id": "minimal-output",
+      "input": "기본 사용법 보여줘",
+      "expect": "허브 본문 ≤10KB 유지하며 P5 형식대로 산출",
+      "fail_if": "본문 비대 또는 형식 위반"
+    },
+    {
+      "id": "edge-empty-input",
+      "input": "(빈 입력 또는 모호한 입력)",
+      "expect": "PREFLIGHT에서 입력 검증·핑퐁 또는 STOP+보고",
+      "fail_if": "그냥 진행하여 잘못된 산출물 생성"
+    }
+  ]
+}
