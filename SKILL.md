@@ -1,5 +1,5 @@
 ---
-name: multilingual-translator
+name: translator-skill
 description: |
   다국어 번역 운영 도구. 구조화된 .md 문서의 번역 실행→구조 일치 QC→서브에이전트 관리를 1회 호출로 수행. 다국어 문서 작업시 자동발동.
   P1: 번역, 다국어, 영어번역, 중국어번역, 일본어번역, 태국어번역, 인도네시아어번역, multilingual, translation, 번역운영.
@@ -12,7 +12,7 @@ vault_dependency: SOFT
 version: 2.0.0
 ---
 
-# 다국어 번역 운영 도구
+# Translator Skill — 트랜슬레이터 스킬
 
 구조화된 문서를 다국어로 번역할 때, **내용 번역보다 구조 일치가 더 자주 실패한다.** 이 스킬은 그 실패를 방지하는 운영 규칙과 QC 체크리스트를 제공한다.
 
@@ -75,17 +75,9 @@ python3 ${CLAUDE_SKILL_DIR}/scripts/validate.py .
 
 ---
 
-## §INV NO_WORK_LABEL (산출물·대화 본질 보호)
+## §INV NO_WORK_LABEL
+산출물·대화 작업 라벨 ZERO. → `shaper-skill/references/no-work-label.md`
 
-| 항목 | 정의 |
-|------|------|
-| RULE | 산출물·대화 = 인간 언어. 작업 라벨 ZERO. (1만 페이지 1단어 = FAIL) |
-| 판정 | "이 단어, 사전 없이 읽을 수 있나?" NO → 작업 라벨 → 금지 |
-| ALLOW | 업계 전문용어(QC·LQA·i18n·l10n·DTP·CAT·TM·MT) · 고유명사 · 법조문 |
-| CONVERT | 라벨 발견 → 실명·평문 풀어쓰기 |
-| SELF_CHECK | 번역본 출력 직전 자체 스캔. 1개라도 발견 = 차단·재작성 |
-
----
 
 ## Gotchas (Top 5 — 상세는 sub-agent-rules.md)
 

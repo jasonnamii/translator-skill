@@ -1,4 +1,4 @@
-# Post Skill-Doctor Notes — multilingual-translator
+# Post Skill-Doctor Notes — translator-skill
 
 **진단일:** 2026-04-26  
 **현 SKILL.md 크기:** 15011B (목표: ≤10KB)
